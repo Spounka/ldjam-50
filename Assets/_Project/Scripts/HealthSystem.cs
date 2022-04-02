@@ -1,3 +1,4 @@
+using Spounka.Core.DataTypes;
 using UnityEngine;
 
 namespace Spounka
@@ -9,7 +10,7 @@ namespace Spounka
         [SerializeField] private int _maxHealth = 100;
         [SerializeField] private bool _destroyOnHealthZero;
 
-        private int _currentHealth;
+        [SerializeField] private VariableReference<int> _currentHealth;
 
         public int MaxHealth => _maxHealth;
 
@@ -19,15 +20,15 @@ namespace Spounka
 
         private void Awake()
         {
-            _currentHealth = _maxHealth;
+            _currentHealth.Value = _maxHealth;
         }
 
         public void TakeDamage(int damageAmount)
         {
-            _currentHealth -= damageAmount;
+            _currentHealth.Value -= damageAmount;
             if (_currentHealth > 0) return;
 
-            _currentHealth = 0;
+            _currentHealth.Value = 0;
             if (_destroyOnHealthZero)
                 Destroy(gameObject);
         }
