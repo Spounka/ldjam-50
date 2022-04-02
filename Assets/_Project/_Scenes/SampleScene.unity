@@ -412,7 +412,7 @@ MonoBehaviour:
   _player: {fileID: 883850789}
   _xRange: {x: -15, y: 15}
   _yRange: {x: -9, y: 9}
-  _spawnRate: 3.5
+  _spawnRate: 1.2
   _enemySpawn: {fileID: 405496761067482479, guid: 817056e190e55854a99708a873039ba3, type: 3}
 --- !u!4 &779641930
 Transform:
@@ -426,7 +426,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &883850789 stripped
 Transform:
@@ -773,7 +773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 405496761067482481, guid: 817056e190e55854a99708a873039ba3, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 405496761067482481, guid: 817056e190e55854a99708a873039ba3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -831,7 +831,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3785596973654410648, guid: 2214e4523af1ba040a6966f75db0a7e5, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3785596973654410648, guid: 2214e4523af1ba040a6966f75db0a7e5, type: 3}
       propertyPath: m_LocalPosition.x
