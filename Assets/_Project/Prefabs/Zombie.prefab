@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 40
+  _destroyOnHealthZero: 1
 --- !u!61 &405496761067482484
 BoxCollider2D:
   m_ObjectHideFlags: 0
