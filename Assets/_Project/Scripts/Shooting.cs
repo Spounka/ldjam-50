@@ -34,9 +34,7 @@ namespace Spounka
 
         private void Shoot()
         {
-            var @obj = Instantiate(_bulletPrefab, _transform.position, _transform.rotation);
-            @obj.AddForce(transform.up * _bulletSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
-            Destroy(@obj.gameObject, 3.0f);
+            Instantiate(_bulletPrefab, _transform.position, _transform.rotation);
             timer = _shootingRate;
         }
     }
