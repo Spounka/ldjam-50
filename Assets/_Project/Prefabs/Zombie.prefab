@@ -99,8 +99,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e67e9eca3a88ac4399c7a4bac082625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 3
-  _distanceThreshold: 1.5
+  _movementSpeed:
+    useConstant: 1
+    constantValue: 2.5
+    variable: {fileID: 0}
+  _distanceThreshold:
+    useConstant: 1
+    constantValue: 1.5
+    variable: {fileID: 0}
+  _infectionChance:
+    useConstant: 1
+    constantValue: 0.6
+    variable: {fileID: 0}
+  _isPlayerInfected:
+    useConstant: 0
+    constantValue: 0
+    variable: {fileID: 11400000, guid: abde201223eaf874984c13ef4743c219, type: 2}
 --- !u!114 &405496761067482485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +143,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 40
   _destroyOnHealthZero: 1
+  _currentHealth:
+    useConstant: 1
+    constantValue: 0
+    variable: {fileID: 0}
 --- !u!61 &405496761067482484
 BoxCollider2D:
   m_ObjectHideFlags: 0
