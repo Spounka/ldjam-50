@@ -9,10 +9,12 @@ namespace Spounka
 
         private Vector2 input;
         private Camera _camera;
+        private Transform _transform;
 
         private void Start()
         {
             _camera = Camera.main ? Camera.main : Camera.current;
+            _transform = transform;
         }
 
         private void Update()
@@ -28,15 +30,15 @@ namespace Spounka
         {
             var direction = input.normalized;
             var velocity = direction * _movementSpeed * Time.deltaTime;
-            transform.position += (Vector3)velocity;
+            _transform.position += _transform.rotation * velocity;
         }
 
         private void RotateToMouse()
         {
             var mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-            var difference = (mousePosition - transform.position).normalized;
+            var difference = (mousePosition - _transform.position).normalized;
             var angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle + _rotationOffset);
+            _transform.rotation = Quaternion.Euler(0, 0, angle + _rotationOffset);
         }
     }
 }
