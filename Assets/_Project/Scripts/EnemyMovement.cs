@@ -2,41 +2,28 @@ using UnityEngine;
 
 namespace Spounka
 {
-    public class EnemyMovement : MonoBehaviour
+    public class EnemyMovement
     {
         #region Variables
 
-        [SerializeField] private float _movementSpeed = 3.0f, _distanceThreshold = 1.5f;
-        [SerializeField] private Transform _target = null;
+        private readonly float _movementSpeed;
 
-        private Transform _transform = null;
-        private Rigidbody2D _rb = null;
-        private EnemyAttack _attack;
-        private HealthSystem enemyHealth;
+        private readonly Transform _target = null;
+        private readonly Rigidbody2D _rb = null;
+        private readonly Transform _transform = null;
 
         #endregion
 
-        private void Awake()
+        public EnemyMovement(Rigidbody2D rb, Transform target, Transform transform, float movementSpeed)
         {
-            _rb = GetComponent<Rigidbody2D>();
-            _attack = GetComponent<EnemyAttack>();
+            _rb = rb;
+            _target = target;
+            _movementSpeed = movementSpeed;
             _transform = transform;
-            enemyHealth = _target.GetComponent<HealthSystem>();
         }
 
-        private void FixedUpdate()
+        public void MoveToTarget()
         {
-            MoveToTarget();
-        }
-
-        private void MoveToTarget()
-        {
-            if (Vector2.Distance(_target.position, _transform.position) < _distanceThreshold)
-            {
-                _attack.Attack(enemyHealth);
-                return;
-            }
-
             var direction = (Vector2)(_target.position - _transform.position).normalized;
             var velocity = direction * _movementSpeed * Time.fixedDeltaTime;
             _rb.MovePosition(_rb.position + velocity);
