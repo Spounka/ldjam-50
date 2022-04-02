@@ -23,13 +23,5 @@ namespace Spounka
         {
             _healthSlider.value = _healthSystem.CurrentHealth;
         }
-
-        private void OnGUI()
-        {
-            if (GUI.Button(new Rect(100, 100, 200, 50), "Take Damage"))
-            {
-                _healthSystem.TakeDamage(10);
-            }
-        }
     }
 }
