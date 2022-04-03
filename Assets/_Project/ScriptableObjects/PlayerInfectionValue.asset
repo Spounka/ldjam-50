@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03d14444416c19a41946b0e77487248f, type: 3}
-  m_Name: playerInfection
+  m_Name: PlayerInfectionValue
   m_EditorClassIdentifier: 
-  value: 0
+  value: 100
