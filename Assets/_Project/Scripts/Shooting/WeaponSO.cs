@@ -1,7 +1,7 @@
 using Spounka.Core.DataTypes;
 using UnityEngine;
 
-namespace Spounka
+namespace Spounka.Shooting
 {
     [CreateAssetMenu(fileName = "Weapon", menuName = "Weapons/Weapon")]
     public class WeaponSO : ScriptableObject

@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Spounka
+namespace Spounka.Shooting
 {
     public class Bullet : MonoBehaviour
     {

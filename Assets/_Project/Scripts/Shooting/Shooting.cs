@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Spounka
+namespace Spounka.Shooting
 {
     public class Shooting : MonoBehaviour
     {
