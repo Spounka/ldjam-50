@@ -10,7 +10,7 @@ namespace Spounka.Enemy
 
         [SerializeField] private Transform _player;
         [SerializeField] private Vector2 _xRange, _yRange;
-        [SerializeField] private float _spawnRate;
+        [SerializeField] private float _spawnTime;
         [SerializeField] private GameObject _enemySpawn;
 
         private WaitForSeconds _spawnDelay;
@@ -19,7 +19,7 @@ namespace Spounka.Enemy
 
         private void Awake()
         {
-            _spawnDelay = new WaitForSeconds(_spawnRate);
+            _spawnDelay = new WaitForSeconds(_spawnTime);
         }
 
         private IEnumerator Start()
