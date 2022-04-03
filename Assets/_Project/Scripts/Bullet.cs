@@ -9,9 +9,7 @@ namespace Spounka
     {
         #region Variables
 
-        [SerializeField] private float _bulletSpeed = 5.0f;
-        [SerializeField] private int _bulletDamage = 5;
-        [SerializeField] private float _bulletLifeTime = 3.0f;
+        [SerializeField] private BulletSO _bulletSo;
 
         private Rigidbody2D _rb;
 
@@ -20,22 +18,27 @@ namespace Spounka
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
-            Destroy(gameObject, _bulletLifeTime);
+        }
+
+        private void OnEnable()
+        {
+            GetComponent<SpriteRenderer>().sprite = _bulletSo.bulletSprite;
+            Destroy(gameObject, _bulletSo.bulletLifeTime);
         }
 
         private void FixedUpdate()
         {
-            _rb.MovePosition(_rb.position + (Vector2)(_bulletSpeed * _rb.transform.up * Time.deltaTime));
+            _rb.MovePosition(_rb.position + (Vector2)(_bulletSo.bulletSpeed * _rb.transform.up * Time.deltaTime));
         }
 
         private void OnCollisionEnter2D(Collision2D col)
         {
-            if (col.collider.CompareTag("Player")) return;
+            if (col.collider.CompareTag("Player") || col.collider.CompareTag("Pickable")) return;
 
             var healthSystem = col.collider.GetComponent<HealthSystem>();
             if (healthSystem == null) return;
 
-            healthSystem.TakeDamage(_bulletDamage);
+            healthSystem.TakeDamage((int)_bulletSo.bulletDamage.Value);
             Destroy(gameObject);
         }
     }
