@@ -13,8 +13,8 @@ namespace Spounka.Pickups
 
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if (col.CompareTag("Player"))
-                _pickupEffect.ApplyEffect(col.gameObject);
+            if (!col.CompareTag("Player")) return;
+            _pickupEffect.ApplyEffect(col.gameObject);
             Destroy(gameObject);
         }
     }
