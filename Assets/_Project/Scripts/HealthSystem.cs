@@ -14,7 +14,11 @@ namespace Spounka
 
         public int MaxHealth => _maxHealth;
 
-        public int CurrentHealth => _currentHealth;
+        public int CurrentHealth
+        {
+            get => _currentHealth;
+            set => _currentHealth.Value = value;
+        }
 
         #endregion
 
