@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: -3351704258921439625}
   - component: {fileID: 405496761067482484}
   - component: {fileID: 405496761067482483}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Zombie
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
     variable: {fileID: 0}
   _infectionChance:
     useConstant: 1
-    constantValue: 0.6
+    constantValue: 0.4
     variable: {fileID: 0}
   _isPlayerInfected:
     useConstant: 0
