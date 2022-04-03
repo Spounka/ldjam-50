@@ -5,7 +5,6 @@ namespace Spounka
     public class Shooting : MonoBehaviour
     {
         [SerializeField] private float _shootingRate;
-        [SerializeField] private float _bulletSpeed;
         [SerializeField] private Rigidbody2D _bulletPrefab;
         private Transform _transform;
         private float timer = 0;
