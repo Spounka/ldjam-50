@@ -10,8 +10,9 @@ namespace Spounka
 
         [SerializeField] private VariableReference<float> _playerInfectionValue;
         [SerializeField] private VariableReference<bool> _isPlayerInfected;
+        [SerializeField] private VariableReference<float> _maxInfectionValue;
 
-        [SerializeField] private int _maxValue = 100;
+
         [SerializeField] private VariableReference<float> _timeForFullInfection;
 
         #endregion
@@ -19,13 +20,16 @@ namespace Spounka
         private void Awake()
         {
             _isPlayerInfected.Value = false;
-            _playerInfectionValue.Value = _maxValue;
+            _playerInfectionValue.Value = 0;
         }
 
         private void Update()
         {
-            if (_isPlayerInfected.Value)
-                _playerInfectionValue.Value += Time.deltaTime * (_maxValue / _timeForFullInfection);
+            if (!_isPlayerInfected.Value || _playerInfectionValue.Value >= _maxInfectionValue.Value) return;
+
+            _playerInfectionValue.Value += Time.deltaTime * (_maxInfectionValue / _timeForFullInfection);
+            if (_playerInfectionValue.Value > _maxInfectionValue)
+                _playerInfectionValue.Value = _maxInfectionValue.Value;
         }
     }
 }
