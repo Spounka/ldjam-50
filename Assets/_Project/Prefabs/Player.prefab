@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 3785596971660959182}
   - component: {fileID: 3785596971660959177}
   - component: {fileID: 1294076067}
-  - component: {fileID: 1294076066}
   m_Layer: 6
   m_Name: Graphics
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,27 +109,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &1294076066
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3785596971660959183}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &3785596973654410649
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +122,7 @@ GameObject:
   - component: {fileID: 3785596973654410650}
   - component: {fileID: 3785596973654410645}
   - component: {fileID: 239639366}
+  - component: {fileID: 239639369}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -180,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementSpeed: 5
   _rotationOffset: -90
+  _rotationSpeed: 6
 --- !u!114 &3785596973654410650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,8 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f094311b3c2080b4bad4b03393e1f9ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shootingRate: 0.2
-  _bulletSpeed: 800
+  _shootingRate: 0.12
+  _bulletSpeed: 750
   _bulletPrefab: {fileID: 8626827223946879005, guid: ee5f0f9f4ed51a34eb09863e43cfd74a, type: 3}
 --- !u!114 &3785596973654410645
 MonoBehaviour:
@@ -239,5 +219,26 @@ MonoBehaviour:
     variable: {fileID: 11400000, guid: 138249b3637b59d46b5f4742fa9ff03f, type: 2}
   _timeForFullInfection:
     useConstant: 1
-    constantValue: 5
+    constantValue: 10
     variable: {fileID: 0}
+--- !u!50 &239639369
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3785596973654410649}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
