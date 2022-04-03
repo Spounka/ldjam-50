@@ -28,7 +28,8 @@ namespace Spounka.Enemy
             {
                 var randomX = Random.Range(_xRange.x, _xRange.y);
                 var randomY = Random.Range(_yRange.x, _yRange.y);
-                var randomPosition = new Vector2(randomX, randomY);
+                var position = _player.position;
+                var randomPosition = new Vector2(randomX + position.x, randomY + position.y);
 
                 // If is close to player, pick another spot
                 if (Vector2.Distance(randomPosition, _player.position) <= 3.0f)
