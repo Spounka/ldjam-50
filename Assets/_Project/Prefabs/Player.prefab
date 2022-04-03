@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3785596971660959182}
   - component: {fileID: 3785596971660959177}
-  m_Layer: 0
+  - component: {fileID: 1294076067}
+  - component: {fileID: 1294076066}
+  m_Layer: 6
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,6 +84,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1294076067
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3785596971660959183}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!50 &1294076066
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3785596971660959183}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3785596973654410649
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +143,8 @@ GameObject:
   - component: {fileID: 3785596973654410651}
   - component: {fileID: 3785596973654410650}
   - component: {fileID: 3785596973654410645}
-  m_Layer: 0
+  - component: {fileID: 239639366}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -158,3 +208,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
+  _destroyOnHealthZero: 0
+  _currentHealth:
+    useConstant: 0
+    constantValue: 0
+    variable: {fileID: 11400000, guid: e2feb1fcab5e8fa4b940b372cfd873ba, type: 2}
+--- !u!114 &239639366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3785596973654410649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ce3d9cff5946d9b9cf333b44604787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerInfectionValue:
+    useConstant: 0
+    constantValue: 0
+    variable: {fileID: 11400000, guid: e6711ba000cb2d84485fafa61dc6fa7d, type: 2}
+  _isPlayerInfected:
+    useConstant: 0
+    constantValue: 0
+    variable: {fileID: 11400000, guid: abde201223eaf874984c13ef4743c219, type: 2}
+  _maxInfectionValue:
+    useConstant: 0
+    constantValue: 100
+    variable: {fileID: 11400000, guid: 138249b3637b59d46b5f4742fa9ff03f, type: 2}
+  _timeForFullInfection:
+    useConstant: 1
+    constantValue: 5
+    variable: {fileID: 0}
