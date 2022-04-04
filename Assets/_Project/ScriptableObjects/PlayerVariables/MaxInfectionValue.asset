@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03d14444416c19a41946b0e77487248f, type: 3}
   m_Name: MaxInfectionValue
   m_EditorClassIdentifier: 
-  value: 100
+  value: 1

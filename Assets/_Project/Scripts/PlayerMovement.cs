@@ -25,6 +25,10 @@ namespace Spounka
         {
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Cursor.visible = !Cursor.visible;
+            }
         }
 
         private void FixedUpdate()
@@ -35,9 +39,14 @@ namespace Spounka
 
         private void Move()
         {
+            // var directionX = input.x * Vector2.right;
+            // var directionY = input.y * Vector2.up;
+            // var upVelocity = _transform.rotation * directionY;
+            // var velocity = new Vector2(directionX.x, upVelocity.y) * _movementSpeed * Time.fixedDeltaTime;
+            // _rb.MovePosition(_rb.position + velocity);
             var direction = input.normalized;
             var velocity = direction * _movementSpeed * Time.fixedDeltaTime;
-            _rb.MovePosition(_rb.position + (Vector2)(_transform.rotation * velocity));
+            _rb.MovePosition(_rb.position + velocity);
         }
 
         private void RotateToMouse()
@@ -45,7 +54,8 @@ namespace Spounka
             var mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
             var difference = (mousePosition - _transform.position).normalized;
             var angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            _rb.MoveRotation(angle + _rotationOffset);
+            if (Mathf.Abs(angle) > 2.0f)
+                _rb.MoveRotation(angle + _rotationOffset);
         }
     }
 }

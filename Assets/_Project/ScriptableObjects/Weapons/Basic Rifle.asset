@@ -20,9 +20,10 @@ MonoBehaviour:
     variable: {fileID: 0}
   spread:
     useConstant: 1
-    constantValue: 5.7
+    constantValue: 6.08
     variable: {fileID: 0}
   bulletsShot:
     useConstant: 1
     constantValue: 1
     variable: {fileID: 0}
+  shootingSound: {fileID: 8300000, guid: 934f5800f9ac1b742846ad51aced096e, type: 3}

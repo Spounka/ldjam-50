@@ -1,3 +1,4 @@
+using Spounka.Core.Event;
 using UnityEngine;
 
 namespace Spounka.Enemy
@@ -5,6 +6,8 @@ namespace Spounka.Enemy
     public class EnemyAttack : MonoBehaviour
     {
         #region Variables
+
+        [SerializeField] private GameEvent _playerHurt;
 
         [SerializeField] private int _damageAmount;
         [SerializeField] private float _attackRate;
@@ -24,6 +27,7 @@ namespace Spounka.Enemy
                 return;
             target.TakeDamage(_damageAmount);
             timer = _attackRate;
+            _playerHurt.Raise();
         }
     }
 }

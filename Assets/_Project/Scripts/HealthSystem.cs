@@ -1,4 +1,5 @@
 using Spounka.Core.DataTypes;
+using Spounka.Core.Event;
 using UnityEngine;
 
 namespace Spounka
@@ -11,6 +12,7 @@ namespace Spounka
         [SerializeField] private bool _destroyOnHealthZero;
 
         [SerializeField] private VariableReference<int> _currentHealth;
+        public GameEvent playerDead;
 
         public int MaxHealth => _maxHealth;
 
@@ -40,6 +42,10 @@ namespace Spounka
             _currentHealth.Value = 0;
             if (_destroyOnHealthZero)
                 Destroy(gameObject);
+            if (CompareTag("Player"))
+            {
+                playerDead.Raise();
+            }
         }
     }
 }

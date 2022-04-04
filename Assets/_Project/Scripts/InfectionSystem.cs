@@ -1,4 +1,5 @@
 using Spounka.Core.DataTypes;
+using Spounka.Core.Event;
 using UnityEngine;
 
 namespace Spounka
@@ -14,6 +15,8 @@ namespace Spounka
 
         [SerializeField] private VariableReference<float> _timeForFullInfection;
 
+        public GameEvent playerDead;
+
         #endregion
 
         private void Awake()
@@ -27,8 +30,10 @@ namespace Spounka
             if (!_isPlayerInfected.Value || _playerInfectionValue.Value >= _maxInfectionValue.Value) return;
 
             _playerInfectionValue.Value += Time.deltaTime * (_maxInfectionValue / _timeForFullInfection);
-            if (_playerInfectionValue.Value > _maxInfectionValue)
-                _playerInfectionValue.Value = _maxInfectionValue.Value;
+            if (_playerInfectionValue.Value >= _maxInfectionValue)
+            {
+                playerDead.Raise();
+            }
         }
     }
 }

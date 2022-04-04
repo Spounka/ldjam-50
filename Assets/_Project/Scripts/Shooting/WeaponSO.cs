@@ -11,5 +11,6 @@ namespace Spounka.Shooting
         public VariableReference<float> fireRate;
         public VariableReference<float> spread;
         public VariableReference<int> bulletsShot;
+        public AudioClip shootingSound;
     }
 }

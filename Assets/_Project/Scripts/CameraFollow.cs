@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Spounka
@@ -9,13 +10,21 @@ namespace Spounka
         [SerializeField] private float _followSpeed;
         [SerializeField] private Transform _followTarget;
         [SerializeField] private Vector3 _offset;
+        [SerializeField] private float _rotationSpeed;
+
+        private Transform _transform;
 
         #endregion
 
+        private void Awake()
+        {
+            _transform = transform;
+        }
+
         private void LateUpdate()
         {
-            transform.position =
-                Vector3.Lerp(transform.position, _followTarget.position + _offset, _followSpeed * Time.deltaTime);
+            _transform.position =
+                Vector3.Lerp(_transform.position, _followTarget.position + _offset, _followSpeed * Time.deltaTime);
         }
     }
 }

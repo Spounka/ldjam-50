@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f36e13b95364177a60c49c823c41f83, type: 3}
+  m_Name: Rifle
+  m_EditorClassIdentifier: 
+  bulletSo: {fileID: 11400000, guid: 4a73295b5b343c140b237623939c1134, type: 2}
+  weaponSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  fireRate:
+    useConstant: 1
+    constantValue: 0.11
+    variable: {fileID: 0}
+  spread:
+    useConstant: 1
+    constantValue: 8
+    variable: {fileID: 0}
+  bulletsShot:
+    useConstant: 1
+    constantValue: 2
+    variable: {fileID: 0}
+  shootingSound: {fileID: 8300000, guid: 934f5800f9ac1b742846ad51aced096e, type: 3}
